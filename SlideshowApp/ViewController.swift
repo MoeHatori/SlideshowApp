@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //スライドショーの処理
+//スライドショーの処理
     @IBAction func startButton(_ sender: Any) {
         if(timer == nil){
             
@@ -55,25 +55,79 @@ class ViewController: UIViewController {
         
     }
     
-    //画像の切り替えのための処理
+    //スライドショーの画像の切り替えのための処理
     @objc func changeImage(){
-        Nowindex += 1
+        
         
         if(Nowindex == imageArray.count){
             Nowindex = 0
         }
         
         imageView.image = imageArray[Nowindex]
+        Nowindex += 1
         
     }
     
-    //進むボタン
+//進むボタンを押したときの処理
     @IBAction func goButton(_ sender: Any) {
+        
+        
+        if(Nowindex == imageArray.count){
+            Nowindex = 0
+        }
+        
+        //print("print1_\(Nowindex)") //Debug
+        
+        imageView.image = imageArray[Nowindex]
+        Nowindex += 1
+        
+        //print("print1last_\(Nowindex)") //Debug
     }
     
-    //戻るボタン
+//戻るボタンを押したときの処理
     @IBAction func backButton(_ sender: Any) {
+        
+        //Nowindexがさ要素数と一致したとき（今回は３）のときの判定処理
+        if(Nowindex == imageArray.count){
+            Nowindex = imageArray.count - 1
+           // print("print2_\(Nowindex)") //Debug
+        }
+        
+        //Nowindexが０だったときの判定処理
+        if (Nowindex == 0){
+            imageView.image = imageArray[Nowindex]
+            Nowindex = imageArray.count - 1
+            //print("print4_\(Nowindex)") //Debug
+        }else {
+            imageView.image = imageArray[Nowindex]
+            Nowindex -= 1
+            //print("print5_\(Nowindex)") //Debug
+        }
+    
     }
+    
+//画面遷移の処理
+    //画像がタッチされたときの処理
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    
+    
+    //prepareメソッドはセグエが呼び出される前の処理
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        let next:ResultViewController = segue.destination as! ResultViewController
+//
+ //       next.argString = NameLabel.text!
+ //   }
+    
+    
+    //戻ってきたときの処理
+    @IBAction func backwind(_ segue: UIStoryboardSegue){
+        
+    }
+    
     
     
     
