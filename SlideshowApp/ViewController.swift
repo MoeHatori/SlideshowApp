@@ -58,6 +58,7 @@ class ViewController: UIViewController {
             GoButton.isEnabled = false
             BackButton.isEnabled = false
             
+            
         } else {
             
             timer.invalidate()
@@ -69,7 +70,6 @@ class ViewController: UIViewController {
             //進む・戻るボタンの有効化
             GoButton.isEnabled = true
             BackButton.isEnabled = true
-            
             
         }
         
@@ -132,13 +132,15 @@ class ViewController: UIViewController {
     
 //画面遷移の処理
     //画像がタッチされたときの処理
-    
-
     @IBAction func onTapImage(_ sender: Any) {
         
         //print("print5_\(Nowindex)") //Debug
-        timer.invalidate()
-        timer = nil
+        if timer != nil{
+            timer.invalidate()
+            timer = nil
+            slideshowButton.setTitle("再生", for: .normal)
+        }
+        
         performSegue(withIdentifier: "toNextViewContoroller",sender: self)
         
         
