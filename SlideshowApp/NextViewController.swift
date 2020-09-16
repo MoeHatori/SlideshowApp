@@ -10,10 +10,25 @@ import UIKit
 
 class NextViewController: UIViewController {
 
+    //画像の表示スペース
+    @IBOutlet weak var sendImage: UIImageView!
+    
+    //表示する画像のための宣言
+    var selectImage: UIImage!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //画像の表示
+        sendImage.image = selectImage
+        
+        //画像の拡大
+        sendImage.contentMode = UIView.ContentMode.scaleAspectFit
+        
     }
     
 

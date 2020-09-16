@@ -39,20 +39,36 @@
                                     <action selector="backButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uwp-JD-E8r"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-xO-fng">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-xO-fng">
                                 <rect key="frame" x="77" y="168" width="275" height="351"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cD9-w0-o55" appends="YES" id="uhK-xF-0jo"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cD9-w0-o55" appends="YES" id="kFD-UT-mbK"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="BackButton" destination="tAQ-3c-bVl" id="mIs-PQ-tw1"/>
+                        <outlet property="GoButton" destination="qIH-NX-lgM" id="doK-b1-nzC"/>
                         <outlet property="imageView" destination="SKx-xO-fng" id="IzE-xs-pJV"/>
                         <outlet property="slideshowButton" destination="QhD-01-Gy8" id="mCl-Lc-Vau"/>
+                        <segue destination="5Yt-JZ-Opq" kind="show" identifier="toNextViewContoroller" id="Y7V-DX-2qr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cD9-w0-o55">
+                    <connections>
+                        <action selector="onTapImage:" destination="BYZ-38-t0r" id="hPg-kG-Kgn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
         </scene>
@@ -61,25 +77,29 @@
             <objects>
                 <viewController id="5Yt-JZ-Opq" customClass="NextViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kuE-vS-tbw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJn-Hl-hMX">
+                                <rect key="frame" x="175" y="662" width="47" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="bFs-H6-Kp3" kind="unwind" unwindAction="unwind:" id="uKH-Ac-SOU"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDd-I6-3Ik">
                                 <rect key="frame" x="53" y="58" width="326" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJn-Hl-hMX">
-                                <rect key="frame" x="175" y="662" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="bFs-H6-Kp3" kind="unwind" unwindAction="backwind:" id="eCb-SY-rpg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="FDF-hY-qdc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MgX-TF-n2L"/>
+                    <connections>
+                        <outlet property="sendImage" destination="QDd-I6-3Ik" id="sUf-uB-guo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmi-oH-N3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bFs-H6-Kp3" userLabel="Exit" sceneMemberID="exit"/>
