@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        imageView.image = imageArray[0]
+        
         //ボタンを丸くする
         slideshowButton.layer.cornerRadius = 10.0
         GoButton.layer.cornerRadius = 10.0
@@ -83,21 +85,21 @@ class ViewController: UIViewController {
     //スライドショーの画像の切り替えのための処理
     @objc func changeImage(){
         
-        
+        Nowindex += 1
         if(Nowindex == imageArray.count){
             Nowindex = 0
         }
         
         imageView.image = imageArray[Nowindex]
         clickImage = imageArray[Nowindex]
-        Nowindex += 1
+        //★Nowindex += 1
         
     }
     
 //進むボタンを押したときの処理
     @IBAction func goButton(_ sender: Any) {
         
-        
+        Nowindex += 1
         if(Nowindex == imageArray.count){
             Nowindex = 0
         }
@@ -106,7 +108,7 @@ class ViewController: UIViewController {
         
         imageView.image = imageArray[Nowindex]
         clickImage = imageArray[Nowindex]
-        Nowindex += 1
+        // ★Nowindex += 1
         
         //print("print1last_\(Nowindex)") //Debug
     }
@@ -122,14 +124,16 @@ class ViewController: UIViewController {
         
         //Nowindexが０だったときの判定処理
         if (Nowindex == 0){
+            Nowindex = imageArray.count - 1
             imageView.image = imageArray[Nowindex]
             clickImage = imageArray[Nowindex]
-            Nowindex = imageArray.count - 1
+            //★Nowindex = imageArray.count - 1
             //print("print4_\(Nowindex)") //Debug
         }else {
+            Nowindex -= 1
             imageView.image = imageArray[Nowindex]
             clickImage = imageArray[Nowindex]
-            Nowindex -= 1
+            //★Nowindex -= 1
             //print("print5_\(Nowindex)") //Debug
         }
     
