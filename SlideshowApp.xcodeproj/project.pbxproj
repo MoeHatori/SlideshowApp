@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E668B19625134789008F0D7D /* aga2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E668B19525134789008F0D7D /* aga2.jpg */; };
+		E668B19A25134E86008F0D7D /* aga2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E668B19925134E86008F0D7D /* aga2.jpg */; };
 		E6C1C4E22511D94100FCD701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C1C4E12511D94100FCD701 /* AppDelegate.swift */; };
 		E6C1C4E42511D94100FCD701 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C1C4E32511D94100FCD701 /* SceneDelegate.swift */; };
 		E6C1C4E62511D94100FCD701 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C1C4E52511D94100FCD701 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		E668B19525134789008F0D7D /* aga2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aga2.jpg; path = ../../../Downloads/aga2.jpg; sourceTree = "<group>"; };
+		E668B19925134E86008F0D7D /* aga2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aga2.jpg; sourceTree = "<group>"; };
 		E6C1C4DE2511D94100FCD701 /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C1C4E12511D94100FCD701 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6C1C4E32511D94100FCD701 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		E6C1C4E02511D94100FCD701 /* SlideshowApp */ = {
 			isa = PBXGroup;
 			children = (
+				E668B19925134E86008F0D7D /* aga2.jpg */,
 				E6C1C4E12511D94100FCD701 /* AppDelegate.swift */,
 				E6C1C4E32511D94100FCD701 /* SceneDelegate.swift */,
 				E6C1C4E52511D94100FCD701 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 				E6C1C4FE2511E39600FCD701 /* aga3.jpg in Resources */,
 				E6C1C4FA2511E38100FCD701 /* aga1.jpg in Resources */,
 				E6C1C4EB2511D94300FCD701 /* Assets.xcassets in Resources */,
+				E668B19A25134E86008F0D7D /* aga2.jpg in Resources */,
 				E668B19625134789008F0D7D /* aga2.jpg in Resources */,
 				E6C1C4E92511D94100FCD701 /* Main.storyboard in Resources */,
 			);
