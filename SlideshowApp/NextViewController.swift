@@ -17,11 +17,16 @@ class NextViewController: UIViewController {
     var selectImage: UIImage!
     
     
+    @IBOutlet weak var ReturnButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //ボタンを丸くする
+        ReturnButton.layer.cornerRadius = 10.0
+        
         
         //画像の表示
         sendImage.image = selectImage

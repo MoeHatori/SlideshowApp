@@ -41,6 +41,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //ボタンを丸くする
+        slideshowButton.layer.cornerRadius = 10.0
+        GoButton.layer.cornerRadius = 10.0
+        BackButton.layer.cornerRadius = 10.0
     }
     
 //スライドショーの処理
